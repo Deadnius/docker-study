@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Коровка на Docsify</title>
+  <!-- Тема (можно убрать или заменить) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
+</head>
+<body>
+  <!-- Контейнер для Docsify -->
+  <div id="app">Загрузка...</div>
+
+  <script>
+    window.$docsify = {
+      name: 'Учебное приложение',
+      loadSidebar: false,   // без сайдбара
+      subMaxLevel: 2,
+      // мини-плагин: после рендера навешиваем обработчик на кнопку
+      plugins: [
+        function (hook) {
+          hook.doneEach(function () {
+            const btn = document.getElementById('cow-btn');
+            if (btn) {
+              btn.onclick = () => {
+                const box = document.getElementById('cow-msg');
+                if (box) box.textContent = 'Мууууу';
+              };
+            }
+          });
+        }
+      ]
+    };
+  </script>
+
+  <!-- Docsify (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+</body>
+</html>
