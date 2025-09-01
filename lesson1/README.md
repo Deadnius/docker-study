@@ -10,5 +10,5 @@
 - `Dockerfile` — образ на базе `nginx:alpine`, копируем файлы в `/usr/share/nginx/html/`.
 
 # открыть в браузере:
-# http://localhost:18080/#/
-# (или просто http://localhost:18080 — доксайфай сам покажет README по хэшу)
+# http://localhost:8080/#/
+# (или просто http://localhost:8080 — доксайфай сам покажет README по хэшу)

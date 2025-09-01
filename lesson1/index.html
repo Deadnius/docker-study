@@ -2,38 +2,39 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Коровка на Docsify</title>
-  <!-- Тема (можно убрать или заменить) -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Коровка</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #f6f7f9;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+    #msg {
+      margin-top: 1rem;
+      font-size: 1.5rem;
+      color: #333;
+    }
+  </style>
 </head>
 <body>
-  <!-- Контейнер для Docsify -->
-  <div id="app">Загрузка...</div>
+  <h1>Учебное приложение</h1>
+  <button id="cow-btn">Что говорит коровка</button>
+  <div id="msg"></div>
 
   <script>
-    window.$docsify = {
-      name: 'Учебное приложение',
-      loadSidebar: false,   // без сайдбара
-      subMaxLevel: 2,
-      // мини-плагин: после рендера навешиваем обработчик на кнопку
-      plugins: [
-        function (hook) {
-          hook.doneEach(function () {
-            const btn = document.getElementById('cow-btn');
-            if (btn) {
-              btn.onclick = () => {
-                const box = document.getElementById('cow-msg');
-                if (box) box.textContent = 'Мууууу';
-              };
-            }
-          });
-        }
-      ]
-    };
+    document.getElementById('cow-btn').addEventListener('click', function () {
+      document.getElementById('msg').textContent = 'Мууууу';
+    });
   </script>
-
-  <!-- Docsify (CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
 </body>
 </html>
